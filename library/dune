@@ -1,2 +1,3 @@
 (library (name Library) (public_name reason-graphql-example.library)
-    (libraries console.lib pastel.lib)) 
+    (libraries console.lib pastel.lib lwt cohttp digestif.c cohttp-lwt-unix
+        graphql-cohttp graphql-lwt yojson))

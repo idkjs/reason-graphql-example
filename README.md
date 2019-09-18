@@ -5,7 +5,13 @@ A project which demonstrates a Reason workflow with [Esy][].
 [esy]: https://github.com/esy/esy
 
 ## Usage
-@opam/digestif.c @opam/cohttp-lwt-unix @opam/graphql-lwt @opam/graphql-cohttp @opam/yojson
+
+## depenencies
+
+```bsh
+esy add @opam/digestif.c @opam/cohttp-lwt-unix @opam/graphql-lwt @opam/graphql-cohttp @opam/yojson
+```
+
 You need Esy, you can install the beta using [npm](https://npmjs.com):
 
     % npm install -g esy@latest

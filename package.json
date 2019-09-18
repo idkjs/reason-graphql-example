@@ -5,49 +5,34 @@
   "esy": {
     "build": "refmterr dune build -p #{self.name}",
     "NOTE": "Optional release Section. Customizes result of `esy release`",
-    "release": {
-      "releasedBinaries": [
-        "ReasonGraphqlExampleApp.exe"
-      ]
-    },
-    "buildEnv": {
-      "ODOC_SYNTAX": "re"
-    }
+    "release": { "releasedBinaries": [ "ReasonGraphqlExampleApp.exe" ] },
+    "buildEnv": { "ODOC_SYNTAX": "re" }
   },
   "buildDirs": {
     "test": {
-      "require": [
-        "reason-graphql-example/library",
-        "rely.lib"
-      ],
-      "flags": [
-        "-linkall",
-        "-g",
-        "-w",
-        "-9"
-      ]
+      "require": [ "reason-graphql-example/library", "rely.lib" ],
+      "flags": [ "-linkall", "-g", "-w", "-9" ]
     },
     "testExe": {
-      "require": [
-        "reason-graphql-example/test"
-      ],
+      "require": [ "reason-graphql-example/test" ],
       "bin": {
         "RunReasonGraphqlExampleTests.exe": "RunReasonGraphqlExampleTests.re"
       }
     },
-    "library": {
-      "require": [
-        "console.lib",
-        "pastel.lib"
-      ]
-    },
+    "library": { "require": [
+      "console.lib",
+      "pastel.lib",
+        "lwt",
+        "cohttp",
+        "digestif",
+        "cohttp-lwt-unix",
+        "graphql-cohttp",
+        "graphql-lwt",
+        "yojson"
+      ] },
     "bin": {
-      "require": [
-        "reason-graphql-example/library"
-      ],
-      "bin": {
-        "ReasonGraphqlExampleApp.exe": "ReasonGraphqlExampleApp.re"
-      }
+      "require": [ "reason-graphql-example/library" ],
+      "bin": { "ReasonGraphqlExampleApp.exe": "ReasonGraphqlExampleApp.re" }
     }
   },
   "scripts": {
@@ -57,13 +42,18 @@
     "doc-path": "esy echo #{self.target_dir}/default/_doc/_html/index.html"
   },
   "dependencies": {
+    "@esy-ocaml/reason": "*",
+    "@opam/cohttp-lwt-unix": "2.3.0",
+    "@opam/digestif": "0.7.4",
     "@opam/dune": "*",
+    "@opam/graphql-cohttp": "0.12.1",
+    "@opam/graphql-lwt": "0.9.0",
+    "@opam/lwt": "4.3.0",
+    "@opam/yojson": "1.7.0",
     "@reason-native/console": "*",
     "@reason-native/pastel": "*",
     "@reason-native/rely": "*",
-    "@esy-ocaml/reason": "*",
-    "refmterr": "*",
-    "ocaml": "~4.7.0"
+    "refmterr": "*"
   },
   "devDependencies": {
     "@opam/merlin": "*",
