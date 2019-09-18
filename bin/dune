@@ -1,0 +1,3 @@
+(executable (name ReasonGraphqlExampleApp)
+    (public_name ReasonGraphqlExampleApp.exe)
+    (libraries reason-graphql-example.library)) 

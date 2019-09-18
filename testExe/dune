@@ -1,0 +1,3 @@
+(executable (name RunReasonGraphqlExampleTests)
+    (public_name RunReasonGraphqlExampleTests.exe)
+    (libraries reason-graphql-example.test)) 

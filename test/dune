@@ -1,0 +1,3 @@
+(library (name Test) (public_name reason-graphql-example.test)
+    (libraries reason-graphql-example.library rely.lib)
+    (flags -linkall -g -w -9)) 

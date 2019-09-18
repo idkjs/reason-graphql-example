@@ -1,0 +1,2 @@
+(library (name Library) (public_name reason-graphql-example.library)
+    (libraries console.lib pastel.lib)) 
